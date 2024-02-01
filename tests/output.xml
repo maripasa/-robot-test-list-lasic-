@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.4 on win32)" generated="2024-01-31T21:11:04.782995" rpa="false" schemaversion="5">
+<suite id="s1" name="test SERVEREST API" source="C:\Users\asafe\projects\robot-test-list-lasic\tests\test_SERVEREST_API.robot">
+<test id="s1-t1" name="TC01 - Realizar busca dos produtos" line="15">
+<kw name="Pegar os produtos">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-01-31T21:11:05.420307" level="INFO">GET Request : url=https://serverest.dev/produtos 
+ path_url=/produtos 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-01-31T21:11:05.420307" level="INFO">GET Response : url=https://serverest.dev/produtos 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'cc0199fbfd6e965931b6a2fcc94c2ef2;o=1', 'Date': 'Thu, 01 Feb 2024 00:10:54 GMT', 'Server': 'Google Frontend', 'Content-Length': '435'} 
+ body={
+    "quantidade": 2,
+    "produtos": [
+        {
+            "nome": "Logitech MX Vertical",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 382,
+            "_id": "BeeJh5lz3k6kSIzA"
+        },
+        {
+            "nome": "Samsung 60 polegadas",
+            "preco": 5240,
+            "descricao": "TV",
+            "quantidade": 49977,
+            "_id": "K6leHdftCeOJj8BJ"
+        }
+    ]
+} 
+ </msg>
+<arg>url=${HOST}/${GET_PRODUTOS}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-01-31T21:11:04.940054" elapsed="0.480253"/>
+</kw>
+<status status="PASS" start="2024-01-31T21:11:04.939052" elapsed="0.481255"/>
+</kw>
+<status status="PASS" start="2024-01-31T21:11:04.938054" elapsed="0.483253"/>
+</test>
+<status status="PASS" start="2024-01-31T21:11:04.785996" elapsed="0.636310"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="test SERVEREST API">test SERVEREST API</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
