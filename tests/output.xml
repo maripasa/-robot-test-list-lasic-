@@ -1,20 +1,413 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.4 on win32)" generated="2024-01-31T21:11:04.782995" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.4 on win32)" generated="2024-02-01T17:01:12.884196" rpa="false" schemaversion="5">
 <suite id="s1" name="test SERVEREST API" source="C:\Users\asafe\projects\robot-test-list-lasic\tests\test_SERVEREST_API.robot">
-<test id="s1-t1" name="TC01 - Realizar busca dos produtos" line="15">
-<kw name="Pegar os produtos">
+<test id="s1-t1" name="TC01 - Realizar requisições GET" line="51">
+<kw name="Pegar os usuários">
+<kw name="Setup Headers">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-01T17:01:13.050667" level="INFO">&amp;{headers} = { Content-type=application/json | Authorization=Bearer }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-type=application/json</arg>
+<arg>Authorization=${AUTH_TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-01T17:01:13.049663" elapsed="0.001004"/>
+</kw>
+<msg time="2024-02-01T17:01:13.050667" level="INFO">&amp;{headers} = { }</msg>
+<var>&amp;{headers}</var>
+<status status="PASS" start="2024-02-01T17:01:13.048662" elapsed="0.002005"/>
+</kw>
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2024-01-31T21:11:05.420307" level="INFO">GET Request : url=https://serverest.dev/produtos 
+<msg time="2024-02-01T17:01:13.626237" level="INFO">GET Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-02-01T17:01:13.626237" level="INFO">GET Response : url=https://serverest.dev/usuarios 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '7d61723852a07352fdab32677b6759df', 'Date': 'Thu, 01 Feb 2024 20:01:00 GMT', 'Server': 'Google Frontend', 'Content-Length': '26181'} 
+ body={
+    "quantidade": 117,
+    "usuarios": [
+        {
+            "nome": "Fulano da Silva",
+            "email": "wacyxkbiteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "0E3ri5ZKLlPQ52g1"
+        },
+        {
+            "nome": "Fabiano Melo",
+            "email": "Pedro.Melo@hotmail.com",
+            "password": "t6YPTqPWQBgdP9w",
+            "administrador": "true",
+            "_id": "0kROoRBVp1DQPJjG"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "uruknwosteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "17Cyve8UCcfqRiWb"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "ntbihnmqteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "1942EtoeEdF0oHdE"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "vdvdztbsteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "1eKdNd3rAVKGVxeg"
+        },
+        {
+            "nome": "nome ${Math.random()}",
+            "email": "email_1706813761219_qxiif9@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "1zFHCuwNcilXZfn7"
+        },
+        {
+            "nome": "Marcelo",
+            "email": "Jordan.Dach82@hotmail.com",
+            "password": "VT7_ICD6BGWxc9A",
+            "administrador": "true",
+            "_id": "24yvbV4vMmSIOFmT"
+        },
+        {
+            "nome": "Teste",
+            "email": "teste2@gmail.com",
+            "password": "teste123",
+            "administrador": "true",
+            "_id": "2Jz7SdbYK1HZYYUJ"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "gkmmnktqteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "2ck2yURTe1PcIEk7"
+        },
+        {
+            "nome": "nome ${Math.random()}",
+            "email": "email_1706806399564_acied@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "2dlBRhTUIfL48rEZ"
+        },
+        {
+            "nome": "Fulano Beltrano Teste",
+            "email": "007teste.qa@test.com",
+            "password": "Test@123",
+            "administrador": "true",
+            "_id": "2vZ5CjzChx6Sbm8P"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "zdpnrzodteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "2vdeEh17lu9ZicDx"
+        },
+        {
+            "nome": "automation.77210081",
+            "email": "automation.77210081@automation.com",
+            "password": "12345678",
+            "administrador": "false",
+            "_id": "34S0sXhs6Z50p0wL"
+        },
+        {
+            "nome": "automation.8513",
+            "email": "automation.8513@automation.com",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "4IQqWrYmc6QqLUjj"
+        },
+        {
+            "nome": "automation.6026",
+            "email": "automation.6026@automation.com",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "4cuDkh144FsPvQnV"
+        },
+        {
+            "nome": "Teste",
+            "email": "teste1@gmail.com",
+            "password": "teste123",
+            "administrador": "true",
+            "_id": "4n9Lcl08n3lZGMAn"
+        },
+        {
+            "nome": "nome 0.17471403664042873",
+            "email": "email_1706814733101_o4t7eh@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "5aayZpnVijhblJfz"
+        },
+        {
+            "nome": "nome ${Math.random()}",
+            "email": "email_1706814036352_48oklo@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "5wM8NlOygmYdqQY6"
+        },
+        {
+            "nome": "Keenan",
+            "email": "Rico67@hotmail.com",
+            "password": "VJc61rGCqygyR0r",
+            "administrador": "true",
+            "_id": "6FpPfp3Q7cKEBPK1"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "knoghkxwteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "6YRO0QRNdTkuXI2P"
+        },
+        {
+            "nome": "nome 0.17471403664042873",
+            "email": "email_1706814555822_dlctva@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "76aJD1HT0vDT9CmP"
+        },
+        {
+            "nome": "Brandyn",
+            "email": "Braxton75@hotmail.com",
+            "password": "M5JI8yDrAIZFSeV",
+            "administrador": "true",
+            "_id": "7MOYs2t8HfFSy6DH"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "ulxhweqgteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "7ZUktnZrWtmGFsrx"
+        },
+        {
+            "nome": "{{randomName}}",
+            "email": "email_1706816074344_8pmjan@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "9vMHz0M4VANNIe6n"
+        },
+        {
+            "nome": "Cesar",
+            "email": "cesar4@exemplo.com.br",
+            "password": "Teste123",
+            "administrador": "false",
+            "_id": "AeowonHrDUNZPqlo"
+        },
+        {
+            "nome": "nome 0.17471403664042873",
+            "email": "email_1706814625988_w971xl@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "Atnw1Ej4JfpH9hkk"
+        },
+        {
+            "nome": "nome ${Math.random()}",
+            "email": "email_1706813205979_tkzg36@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "BLsd1cS9ghvNO4UF"
+        },
+        {
+            "nome": "{{randomName}}",
+            "email": "email_1706816059435_x3iu3@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "BXh66QfHjlQD7MA2"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "beltrano1706791236886@qa.com.br",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "D60VL9gqBWYb9x7s"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "tpewbddgteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "Dxav9ZQME6W9Xuzh"
+        },
+        {
+            "nome": "Cesar",
+            "email": "cesar2@exemplo.com.br",
+            "password": "Teste123",
+            "administrador": "false",
+            "_id": "F5QOGxcrk3PfjjjG"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "hubvrodwteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "Frb1IrSqVUn5tqII"
+        },
+        {
+            "nome": "{{randomName}}",
+            "email": "email_1706816340415_8ofyo1@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "GkzQAYw2HuUmVP9k"
+        },
+        {
+            "nome": "{{randomName}}",
+            "email": "email_1706816066576_fgk3rk@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "HwHEtAMb7KRLEUcG"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "wciqkffateste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "J4GeEv9q3ua4E4U6"
+        },
+        {
+            "nome": "automation.0077",
+            "email": "automation.0077@automation.com",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "JZKx6melJo4Lfwz6"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "qdzyfxjvteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "JssyWaKfl5XagxXW"
+        },
+        {
+            "nome": "User Dani",
+            "email": "userdani@qa.com.br",
+            "password": "teste123",
+            "administrador": "true",
+            "_id": "KxC7GnQZJHGnYzgG"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "ghghytioteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "LWqNOrOY1a7XNLBl"
+        },
+        {
+            "nome": "nome 0.17471403664042873",
+            "email": "email_1706815468000_7wt1ca@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "Lkp0BaPuaYQnlSx7"
+        },
+        {
+            "nome": "nome 0.17471403664042873",
+            "email": "email_1706814594195_eqxyx@example.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "Ll9n9qLZ3oMfMxLc"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "fvonsqnlteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "NIfJ6T2G7tijV8WH"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "ypipcrwmteste@email.teste.com.br",
+            "password": "1234",
+            "administrador": "true",
+            "_id": "NJhaKyUFDVeUXl74"
+        },
+        {
+            "nome": "Dumb Joe",
+            "email": "dumb.joe@qa.com.br",
+            "password": "test",
+            "administrador": "true",
+            "_id": "NjIzDCkXPYXrF1JA"
+        },
+        {
+            "nome": "Terence Thiel",
+            "email": "Roscoe56@gmail.... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<arg>url=${HOST}/${USUARIOS}</arg>
+<arg>headers=&amp;{headers}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-02-01T17:01:13.051661" elapsed="0.574576"/>
+</kw>
+<status status="PASS" start="2024-02-01T17:01:13.048662" elapsed="0.577575"/>
+</kw>
+<kw name="Pegar os produtos">
+<kw name="Setup Headers">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-01T17:01:13.628757" level="INFO">&amp;{headers} = { Content-type=application/json | Authorization=Bearer }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-type=application/json</arg>
+<arg>Authorization=${AUTH_TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-01T17:01:13.628757" elapsed="0.000000"/>
+</kw>
+<msg time="2024-02-01T17:01:13.628757" level="INFO">&amp;{headers} = { }</msg>
+<var>&amp;{headers}</var>
+<status status="PASS" start="2024-02-01T17:01:13.627736" elapsed="0.001021"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-02-01T17:01:14.069316" level="INFO">GET Request : url=https://serverest.dev/produtos 
  path_url=/produtos 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-01-31T21:11:05.420307" level="INFO">GET Response : url=https://serverest.dev/produtos 
+<msg time="2024-02-01T17:01:14.069316" level="INFO">GET Response : url=https://serverest.dev/produtos 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'cc0199fbfd6e965931b6a2fcc94c2ef2;o=1', 'Date': 'Thu, 01 Feb 2024 00:10:54 GMT', 'Server': 'Google Frontend', 'Content-Length': '435'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '4225d158445335eba147594dac8fafd8', 'Date': 'Thu, 01 Feb 2024 20:01:00 GMT', 'Server': 'Google Frontend', 'Content-Length': '5494'} 
  body={
-    "quantidade": 2,
+    "quantidade": 27,
     "produtos": [
+        {
+            "nome": "Poco F5 GT",
+            "preco": 2500,
+            "descricao": "Celular",
+            "quantidade": 125,
+            "_id": "1ywOeNvfAz9weQRY"
+        },
+        {
+            "nome": "PlayStation 5",
+            "preco": 4500,
+            "descricao": "Celular",
+            "quantidade": 200,
+            "_id": "2m5sfIxjYSpGoMoM"
+        },
+        {
+            "nome": "Mouse gamer 3",
+            "preco": 70,
+            "descricao": "Eletrônicos PC",
+            "quantidade": 100,
+            "_id": "6YFdo7PvjW5HWjQf"
+        },
+        {
+            "nome": "Product_9uhfzo",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "7KmwHCKvrLR02HWr"
+        },
+        {
+            "nome": "Notebook dell",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "8PAMXXaGESNv8cps"
+        },
         {
             "nome": "Logitech MX Vertical",
             "preco": 470,
@@ -23,33 +416,356 @@
             "_id": "BeeJh5lz3k6kSIzA"
         },
         {
+            "nome": "Product_ayjyh",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "F4ZGKtJGjQY4nJOs"
+        },
+        {
+            "nome": "Synergistic Aluminum Shirt",
+            "preco": 3000,
+            "descricao": "teste de produto",
+            "quantidade": 1,
+            "_id": "Gov9VJPontyYC7QU"
+        },
+        {
+            "nome": "Poco F6 GT",
+            "preco": 2500,
+            "descricao": "Celular",
+            "quantidade": 130,
+            "_id": "HUoDkJ6w02j4gowd"
+        },
+        {
+            "nome": "Product_rg15af",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 381,
+            "_id": "IBGk96854GK2t86C"
+        },
+        {
+            "nome": "Notebook azus",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "Ij09xq4592djpfud"
+        },
+        {
+            "nome": "Product_fpae7",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 381,
+            "_id": "JZ1C0JuAQaYUbD5m"
+        },
+        {
             "nome": "Samsung 60 polegadas",
             "preco": 5240,
             "descricao": "TV",
             "quantidade": 49977,
             "_id": "K6leHdftCeOJj8BJ"
+        },
+        {
+            "nome": "Product_x5e5pc",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "LuT0tcLekFlHRB7y"
+        },
+        {
+            "nome": "Product_nddx1e",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 381,
+            "_id": "RD288DhLivWMNPZH"
+        },
+        {
+            "nome": "Product_p2v5hr",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 381,
+            "_id": "RJsN1iaMAQ39woEQ"
+        },
+        {
+            "nome": "Modern Wooden Bacon",
+            "preco": 500,
+            "descricao": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+            "quantidade": 10,
+            "_id": "Skyfa9To9jZr5FLQ"
+        },
+        {
+            "nome": "Generic Plastic Salad",
+            "preco": 500,
+            "descricao": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A &amp; J 2016",
+            "quantidade": 0,
+            "_id": "ZjP7PtWxFUK34WfK"
+        },
+        {
+            "nome": "Product_bithi",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "bMc7P0prPQSh7tbA"
+        },
+        {
+            "nome": "Notebook samsung",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "cfCBdtcLZOTYz2KK"
+        },
+        {
+            "nome": "randomProduct",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "cuWFXk9FVaQdY5EV"
+        },
+        {
+            "nome": "Product_y0tbxi",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "kGFsHkb1VTAe7z15"
+        },
+        {
+            "nome": "Product_ovfp6",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 381,
+            "_id": "pmMzC8UDHQ4a39W8"
+        },
+        {
+            "nome": "Product_nb891l",
+            "preco": 470,
+            "descricao": "Notebook",
+            "quantidade": 100,
+            "_id": "rVTyRBTVZwElKIoh"
+        },
+        {
+            "nome": "Product_ldpm9",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 381,
+            "_id": "vXZAuWJ8wl5dA0sD"
+        },
+        {
+            "nome": "Fantastic Leather Hat",
+            "preco": 3000,
+            "descricao": "teste de produto",
+            "quantidade": 1,
+            "_id": "xCRueSxxprSEwLhX"
+        },
+        {
+            "nome": "Logitech teste 01 ggg e Ullrich and Sons",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 380,
+            "_id": "xJyGJaEvcjcZSvyA"
         }
     ]
 } 
  </msg>
-<arg>url=${HOST}/${GET_PRODUTOS}</arg>
+<arg>url=${HOST}/${PRODUTOS}</arg>
+<arg>headers=&amp;{headers}</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-01-31T21:11:04.940054" elapsed="0.480253"/>
+<status status="PASS" start="2024-02-01T17:01:13.628757" elapsed="0.442561"/>
 </kw>
-<status status="PASS" start="2024-01-31T21:11:04.939052" elapsed="0.481255"/>
+<status status="PASS" start="2024-02-01T17:01:13.627736" elapsed="0.443582"/>
 </kw>
-<status status="PASS" start="2024-01-31T21:11:04.938054" elapsed="0.483253"/>
+<kw name="Pegar único produto id BeeJh5lz3k6kSIzA" source_name="Pegar único produto id ${id}">
+<kw name="Setup Headers">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-01T17:01:14.073325" level="INFO">&amp;{headers} = { Content-type=application/json | Authorization=Bearer }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-type=application/json</arg>
+<arg>Authorization=${AUTH_TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.072328" elapsed="0.000997"/>
+</kw>
+<msg time="2024-02-01T17:01:14.073325" level="INFO">&amp;{headers} = { }</msg>
+<var>&amp;{headers}</var>
+<status status="PASS" start="2024-02-01T17:01:14.072328" elapsed="0.000997"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-02-01T17:01:14.507108" level="INFO">GET Request : url=https://serverest.dev/produtos/BeeJh5lz3k6kSIzA 
+ path_url=/produtos/BeeJh5lz3k6kSIzA 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-02-01T17:01:14.507108" level="INFO">GET Response : url=https://serverest.dev/produtos/BeeJh5lz3k6kSIzA 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '275f766958e5ced8fd1dfb94ccd84275', 'Date': 'Thu, 01 Feb 2024 20:01:01 GMT', 'Server': 'Google Frontend', 'Content-Length': '136'} 
+ body={
+    "nome": "Logitech MX Vertical",
+    "preco": 470,
+    "descricao": "Mouse",
+    "quantidade": 382,
+    "_id": "BeeJh5lz3k6kSIzA"
+} 
+ </msg>
+<arg>url=${HOST}/${PRODUTOS}/${id}</arg>
+<arg>headers=&amp;{headers}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.073325" elapsed="0.434781"/>
+</kw>
+<status status="PASS" start="2024-02-01T17:01:14.071318" elapsed="0.437787"/>
+</kw>
+<status status="PASS" start="2024-02-01T17:01:13.047662" elapsed="1.461443"/>
 </test>
-<status status="PASS" start="2024-01-31T21:11:04.785996" elapsed="0.636310"/>
+<test id="s1-t2" name="TC02 - Realizar requisições POST" line="56">
+<kw name="Realizar Login">
+<kw name="Setup Headers">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-01T17:01:14.511111" level="INFO">&amp;{headers} = { Content-type=application/json | Authorization=Bearer }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-type=application/json</arg>
+<arg>Authorization=${AUTH_TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.511111" elapsed="0.000000"/>
+</kw>
+<msg time="2024-02-01T17:01:14.512107" level="INFO">&amp;{headers} = { }</msg>
+<var>&amp;{headers}</var>
+<status status="PASS" start="2024-02-01T17:01:14.511111" elapsed="0.000996"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-01T17:01:14.512107" level="INFO">&amp;{body} = { email=wacyxkbiteste@email.teste.com.br | password=1234 }</msg>
+<var>&amp;{body}</var>
+<arg>email=${EMAIL_ADMINISTRADOR}</arg>
+<arg>password=${SENHA_ADMINISTRADOR}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.512107" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-02-01T17:01:14.948017" level="INFO">POST Request : url=https://serverest.dev/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/json'} 
+ body=b'{"email": "wacyxkbiteste@email.teste.com.br", "password": "1234"}' 
+ </msg>
+<msg time="2024-02-01T17:01:14.948017" level="INFO">POST Response : url=https://serverest.dev/login 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '7cbb2be282e27738205051dcbd45f94e', 'Date': 'Thu, 01 Feb 2024 20:01:01 GMT', 'Server': 'Google Frontend', 'Content-Length': '289'} 
+ body={
+    "message": "Login realizado com sucesso",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhY3l4a2JpdGVzdGVAZW1haWwudGVzdGUuY29tLmJyIiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNzA2ODE3NjYxLCJleHAiOjE3MDY4MTgyNjF9.CCEHBo85ZgfSR7b0ylW6a4e5qcZ0vU_WOXFzdk_SmBw"
+} 
+ </msg>
+<msg time="2024-02-01T17:01:14.950021" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>url=${HOST}/${LOGIN}</arg>
+<arg>headers=&amp;{headers}</arg>
+<arg>json=&amp;{body}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.512107" elapsed="0.437914"/>
+</kw>
+<kw name="Log Variables" owner="BuiltIn">
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${/} = \</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${:} = ;</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${\n} = 
+</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${AUTH_TOKEN} = Bearer</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">&amp;{body} = { email=wacyxkbiteste@email.teste.com.br | password=1234 }</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${DEBUG_FILE} = NONE</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${EMAIL_ADMINISTRADOR} = wacyxkbiteste@email.teste.com.br</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${EXECDIR} = C:\Users\asafe\projects\robot-test-list-lasic\tests</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${False} = False</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">&amp;{headers} = { }</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${HOST} = https://serverest.dev</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${LOG_FILE} = C:\Users\asafe\projects\robot-test-list-lasic\tests\log.html</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${LOG_LEVEL} = INFO</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${LOGIN} = login</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${None} = None</msg>
+<msg time="2024-02-01T17:01:14.951017" level="INFO">${null} = None</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">&amp;{OPTIONS} = { include=[] | exclude=[] | skip=[] | skip_on_failure=[] }</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${OUTPUT_DIR} = C:\Users\asafe\projects\robot-test-list-lasic\tests</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${OUTPUT_FILE} = C:\Users\asafe\projects\robot-test-list-lasic\tests\output.xml</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${PREV_TEST_MESSAGE} = </msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${PREV_TEST_NAME} = TC01 - Realizar requisições GET</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${PREV_TEST_STATUS} = PASS</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${PRODUTOS} = produtos</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${REPORT_FILE} = C:\Users\asafe\projects\robot-test-list-lasic\tests\report.html</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${SENHA_ADMINISTRADOR} = 1234</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${SPACE} =  </msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${SUITE_DOCUMENTATION} = </msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">&amp;{SUITE_METADATA} = { }</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${SUITE_NAME} = test SERVEREST API</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${SUITE_SOURCE} = C:\Users\asafe\projects\robot-test-list-lasic\tests\test_SERVEREST_API.robot</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${TEMPDIR} = C:\Users\asafe\AppData\Local\Temp</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${TEST_DOCUMENTATION} = </msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${TEST_NAME} = TC02 - Realizar requisições POST</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">@{TEST_TAGS} = [ ]</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${True} = True</msg>
+<msg time="2024-02-01T17:01:14.952017" level="INFO">${USUARIOS} = usuarios</msg>
+<doc>Logs all variables in the current scope with given log level.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.950021" elapsed="0.001996"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-01T17:01:14.953017" level="INFO">${AUTH_TOKEN} = Bearer Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhY3l4a2JpdGVzdGVAZW1haWwudGVzdGUuY29tLmJyIiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNzA2ODE3NjYxLCJleHAiOjE3MDY4MTgyNjF9.CCEHBo85ZgfSR7b0ylW6...</msg>
+<var>${AUTH_TOKEN}</var>
+<arg>Bearer ${response.json()['authorization']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.952017" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2024-02-01T17:01:14.510107" elapsed="0.442910"/>
+</kw>
+<kw name="Adicionar um novo produto">
+<kw name="Setup Headers">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-01T17:01:14.954019" level="INFO">&amp;{headers} = { Content-type=application/json | Authorization=Bearer }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-type=application/json</arg>
+<arg>Authorization=${AUTH_TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.954019" elapsed="0.000000"/>
+</kw>
+<msg time="2024-02-01T17:01:14.954019" level="INFO">&amp;{headers} = { }</msg>
+<var>&amp;{headers}</var>
+<status status="PASS" start="2024-02-01T17:01:14.954019" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-01T17:01:14.955020" level="INFO">&amp;{body} = { nome=Thinkpad T480 | preco=1200 | descricao=notebook | quantidade=1000 }</msg>
+<var>&amp;{body}</var>
+<arg>nome=Thinkpad T480</arg>
+<arg>preco=1200</arg>
+<arg>descricao=notebook</arg>
+<arg>quantidade=1000</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-01T17:01:14.955020" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-02-01T17:01:15.386056" level="INFO">POST Request : url=https://serverest.dev/produtos 
+ path_url=/produtos 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '89', 'Content-Type': 'application/json'} 
+ body=b'{"nome": "Thinkpad T480", "preco": "1200", "descricao": "notebook", "quantidade": "1000"}' 
+ </msg>
+<msg time="2024-02-01T17:01:15.386056" level="INFO">POST Response : url=https://serverest.dev/produtos 
+ status=401, reason=Unauthorized 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '17ecc95f2e2a6ea5e9113a6dffd33219', 'Date': 'Thu, 01 Feb 2024 20:01:02 GMT', 'Server': 'Google Frontend', 'Content-Length': '103'} 
+ body={
+    "message": "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
+} 
+ </msg>
+<msg time="2024-02-01T17:01:15.387059" level="FAIL">HTTPError: 401 Client Error: Unauthorized for url: https://serverest.dev/produtos</msg>
+<arg>url=${HOST}/${PRODUTOS}</arg>
+<arg>headers=&amp;{headers}</arg>
+<arg>json=&amp;{body}</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2024-02-01T17:01:14.955020" elapsed="0.433043">HTTPError: 401 Client Error: Unauthorized for url: https://serverest.dev/produtos</status>
+</kw>
+<status status="FAIL" start="2024-02-01T17:01:14.954019" elapsed="0.435037">HTTPError: 401 Client Error: Unauthorized for url: https://serverest.dev/produtos</status>
+</kw>
+<status status="FAIL" start="2024-02-01T17:01:14.510107" elapsed="0.878949">HTTPError: 401 Client Error: Unauthorized for url: https://serverest.dev/produtos</status>
+</test>
+<status status="FAIL" start="2024-02-01T17:01:12.886201" elapsed="2.504857"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="test SERVEREST API">test SERVEREST API</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="test SERVEREST API">test SERVEREST API</stat>
 </suite>
 </statistics>
 <errors>
