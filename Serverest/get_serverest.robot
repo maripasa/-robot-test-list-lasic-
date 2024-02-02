@@ -45,7 +45,7 @@ TC01 - Realizar requisições GET
     Criar Sessão
 
     Pegar os usuários
-    Pegar único usuário por id 0E3ri5ZKLlPQ52g1
+    Pegar único usuário por id 0uxuPY0cbmQhpEz1
 
     Pegar os produtos
     Pegar único produto por id BeeJh5lz3k6kSIzA
