@@ -9,6 +9,6 @@ Este repositório contém as soluções dos testes em robotframework fornecidas 
 !IMPORTANTE!
 > No caso do file robot para o Google Forms, deve-se inserir credenciais que permitam a entrada.
 
-Basta navegar pelo repositório e utilizar o comando robot para testar os códigos. Libraries necessárias podem ser encontradas em [requirements.txt](requirements.txt)
+Basta navegar pelo repositório e utilizar o comando `robot` para testar os códigos. Libraries necessárias podem ser encontradas em [requirements.txt](requirements.txt)
 
 ![266834128-c75a6f3b-ce18-48c7-908e-8efe5aa9c254](https://github.com/maripasa/test-list-lasic/assets/123270648/c25e0690-0630-4091-8b2b-f1e76476a96d)
