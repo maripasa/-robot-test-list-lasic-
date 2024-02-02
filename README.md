@@ -1,4 +1,4 @@
-# Bem-vindo ao Repositório "robot-test-list-lasic"!
+# "robot-test-list-lasic"
 
 _Leia isso em outros idiomas: [English](README.en.md), [Português](README.md)._
 
